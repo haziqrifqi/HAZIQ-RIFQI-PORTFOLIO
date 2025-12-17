@@ -791,4 +791,34 @@ if ('serviceWorker' in navigator) {
         //     .then(registration => console.log('SW registered'))
         //     .catch(error => console.log('SW registration failed'));
     });
+// Live Date & Time (footer) - updates every second (only if the element exists)
+document.addEventListener('DOMContentLoaded', function () {
+    const el = document.getElementById('liveDateTime');
+    if (!el) return;
+
+    function updateLiveDateTime() {
+        const now = new Date();
+        el.textContent = now.toLocaleString(undefined, {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+    }
+
+    updateLiveDateTime();
+    setInterval(updateLiveDateTime, 1000);
+});
+
+// Service Worker Registration (optional)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Uncomment if you have a service worker
+        // navigator.serviceWorker.register('/sw.js')
+        //     .then(registration => console.log('SW registered'))
+        //     .catch(error => console.log('SW registration failed'));
+    });
 }
