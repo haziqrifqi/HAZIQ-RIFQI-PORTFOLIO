@@ -2461,4 +2461,33 @@ header.scrolled {
         right: 1rem;
         font-size: 1.5rem;
     }
+/* Footer */
+.site-footer {
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(10px);
 }
+
+.site-footer .container {
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.18),
+        0 0 22px rgba(0, 212, 255, 0.12);
+}
+
+.footer-datetime {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.72);
+}
+
